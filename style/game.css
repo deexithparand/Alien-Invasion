@@ -28,6 +28,53 @@
     grid-gap:0px;
 }
 
+.gameCanvas div{
+    /*Content inside each div of gameCanvas is centered*/
+    color: rgb(51, 131, 51);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.startScreen{
+    /*Same Position as the gameCanvas*/
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+
+    background-color: white;
+
+    z-index: 1;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0.5;
+}
+
+
+/*Part of the startScreen*/
+#play{
+    color: rosybrown;
+    transition: all 0.3s ease;
+}
+
+#play:hover{
+    cursor: pointer;
+    color: red;
+}
+
+/*Circle inside each div of gameCanvas*/
+#circle{
+    /*visibility: hidden;*/
+    display: none;
+}
+
 
 
 
