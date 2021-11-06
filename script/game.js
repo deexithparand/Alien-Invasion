@@ -1,6 +1,9 @@
 //previous declaration of variable and function
 var key_index;
 
+//avoid keypress before mousedown
+var avoid_keypress = true;
+
 function getKeyIndex(temp){
     //console.log("Pressed : "+temp);
     key_index = temp;
@@ -26,7 +29,7 @@ document.addEventListener('keydown',PressColor = (event) =>{
     //const keyList = ['Home','ArrowUp','PageUp','ArrowLeft','Clear','ArrowRight','End','ArrowDown','PageDown'];
     const keyList = ['7','8','9','4','5','6','1','2','3','Home','ArrowUp','PageUp','ArrowLeft','Clear','ArrowRight','End','ArrowDown','PageDown'];
     var divSelect = document.getElementsByClassName("gameCanvas")[0].getElementsByTagName('div');
-    if(keyList.includes(keyName)==true){
+    if(keyList.includes(keyName)==true && avoid_keypress==false){
        switch(keyName){
             case '7':
                 audio_trigger();
@@ -237,6 +240,8 @@ function mousedown(){
 
     //once screen starts DISPLAY CIRCLE RANDOMLY
     instant_circle_call();
+    //avoid keypress before mousedown
+    avoid_keypress = false;
 }
 
 
@@ -244,18 +249,16 @@ function mousedown(){
 function instant_circle_call(){
     var cnt=0;
     
-    var myVar  = setInterval(instant_circle, 1200);
+    var myVar  = setInterval(instant_circle, 800);
 
     function instant_circle(){
         cnt+=1;
         var randomVal = Math.floor(Math.random() * 9);
         console.log(randomVal); //print index
         document.getElementById('gameCanvas').getElementsByTagName('i').item(randomVal).style.display = "block";
-        //count_points(randomVal); //add score
-        //count_points(); //add score
         setTimeout(function(){
             document.getElementById('gameCanvas').getElementsByTagName('i').item(randomVal).style.display = "none";
-        },1000);
+        },500);
         //temporarily till ##### 10 loops
         if(cnt==10){
             myStopFunction();
@@ -264,42 +267,22 @@ function instant_circle_call(){
 
     function myStopFunction(){
         clearInterval(myVar);
-        //100 is just demo number
+        //10 loops is just for demo
+        display_endScreen();
         window.alert("Your Score : "+count_points());
     }
 }
 
-var points=0;
+//global declaration of  points
+var points=0; //avoid declartion to 0 on call function everytime
 
 //increase points
 function count_points(){
-        
-
-    //var elem = document.getElementById("gameCanvas").getElementsByTagName("div").item(circle_index);
-    //var elem = document.getElementsByTagName("div")[circle_index];
-
-    //var theCSSprop = window.getComputedStyle(elem, null).getPropertyValue("background-color");
-    //var divSelect = document.getElementsByClassName("gameCanvas")[0].getElementsByTagName('div');
-    //var divSelect = document.getElementById("gameCanvas").getElementsByTagName('div');
-    //divSelect[2].style.backgroundColor = "rgb(0,128,0,0.3)";
-    //console.log(divSelect[circle_index].style.backgroundColor);
-    //console.log(circle_index);
-    
-    //color of game Canvas
-    /*if(theCSSprop == "rgb(205, 233, 179)"){
-        console.log("Points...");
-        points+=1;
-    }*/
-
-    
     console.log("Key Index : "+key_index);
     var target = document.getElementById('gameCanvas').getElementsByTagName('i').item(key_index);
-    /*if(key_index == circle_index){
-        audio_triggerExp();
-        console.log("Points...");
-        points+=1;
-    }*/
 
+    //everytime you press the button if there is circle displayed in the index passed
+    //point count increases
     if(target.style.display == "block"){
         audio_triggerExp();
         console.log("Points...");
@@ -309,6 +292,17 @@ function count_points(){
     //final value
     return points;
 }
+
+function display_endScreen(){
+    document.getElementsByClassName('endScreen')[0].style.visibility = "visible";
+    document.getElementsByClassName('endScreen')[0].getElementsByTagName('i')[0].style.visibility = "visible";
+}
+
+function replayMousedown(){
+    location.reload();
+}
+
+
 
 
 
