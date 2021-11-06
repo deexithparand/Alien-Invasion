@@ -6,6 +6,16 @@ function getKeyIndex(temp){
     key_index = temp;
 } 
 
+function audio_trigger(){
+    var audio = new Audio('C:/Users/deexi/OneDrive/Desktop/WebDev/Sun/Audio/laser.mp3');
+    audio.play();
+}
+
+function audio_triggerExp(){
+    var audio = new Audio('C:/Users/deexi/OneDrive/Desktop/WebDev/Sun/Audio/explosion.mp3');
+    audio.play();
+}
+
 //#####
 
 
@@ -19,166 +29,202 @@ document.addEventListener('keydown',PressColor = (event) =>{
     if(keyList.includes(keyName)==true){
        switch(keyName){
             case '7':
+                audio_trigger();
                 divSelect[0].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[0].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 0;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case 'Home':
+                audio_trigger();
                 divSelect[0].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[0].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 0;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
                 
             case '8':
+                audio_trigger();
                 divSelect[1].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[1].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 1;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case 'ArrowUp':
+                audio_trigger();
                 divSelect[1].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[1].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 1;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case '9':
+                audio_trigger();
                 divSelect[2].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[2].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 2;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case 'PageUp':
+                audio_trigger();
                 divSelect[2].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[2].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 2;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case '4':
+                audio_trigger();
                 divSelect[3].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[3].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 3;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case 'ArrowLeft':
+                audio_trigger();
                 divSelect[3].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[3].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 3;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case '5':
+                audio_trigger();
                 divSelect[4].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[4].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 4;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
 
             case 'Clear':
+                audio_trigger();
                 divSelect[4].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[4].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 4;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case '6':
+                audio_trigger();
                 divSelect[5].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[5].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 5;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case 'ArrowRight':
+                audio_trigger();
                 divSelect[5].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[5].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 5;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case '1':
+                audio_trigger();
                 divSelect[6].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[6].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 6;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case 'End':
+                audio_trigger();
                 divSelect[6].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[6].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 6;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case '2':
+                audio_trigger();
                 divSelect[7].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[7].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 7;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case 'ArrowDown':
+                audio_trigger();
                 divSelect[7].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[7].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 7;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case '3':
+                audio_trigger();
                 divSelect[8].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[8].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 8;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
 
             case 'PageDown':
+                audio_trigger();
                 divSelect[8].style.backgroundColor = "rgb(0,128,0,0.3)";
                 setTimeout(function(){ 
                     divSelect[8].style.backgroundColor = "rgb(205,233,179,0)";
                 },200);
                 index = 8;
                 getKeyIndex(index);
+                count_points(); //add points
                 break;
         }
     }
@@ -189,27 +235,14 @@ function mousedown(){
     var target = document.getElementsByClassName('startScreen')[0];
     target.style.display = "none";
 
-    instant_circle();
-
-    /*
-    for (let i = 0; i < 9; i++) {
-        document.getElementById('gameCanvas').getElementsByTagName('i').item(i).style.display = "block";
-    }*/
+    //once screen starts DISPLAY CIRCLE RANDOMLY
+    instant_circle_call();
 }
 
 
 //3. Random Display of circle (Display for 2 secs)
-function instant_circle(){
-
+function instant_circle_call(){
     var cnt=0;
-    //for(i=0;i<9;i++){
-
-    //}
-
-    /*
-    setTimeout(function(){
-        document.getElementById('gameCanvas').getElementsByTagName('i').item(randomVal).style.display = "none";
-    },1500);*/
     
     var myVar  = setInterval(instant_circle, 1200);
 
@@ -218,7 +251,8 @@ function instant_circle(){
         var randomVal = Math.floor(Math.random() * 9);
         console.log(randomVal); //print index
         document.getElementById('gameCanvas').getElementsByTagName('i').item(randomVal).style.display = "block";
-        count_points(randomVal); //add score
+        //count_points(randomVal); //add score
+        //count_points(); //add score
         setTimeout(function(){
             document.getElementById('gameCanvas').getElementsByTagName('i').item(randomVal).style.display = "none";
         },1000);
@@ -231,14 +265,14 @@ function instant_circle(){
     function myStopFunction(){
         clearInterval(myVar);
         //100 is just demo number
-        window.alert("Your Score : "+count_points(50));
+        window.alert("Your Score : "+count_points());
     }
 }
 
 var points=0;
 
 //increase points
-function count_points(circle_index){
+function count_points(){
         
 
     //var elem = document.getElementById("gameCanvas").getElementsByTagName("div").item(circle_index);
@@ -259,8 +293,15 @@ function count_points(circle_index){
 
     
     console.log("Key Index : "+key_index);
+    var target = document.getElementById('gameCanvas').getElementsByTagName('i').item(key_index);
+    /*if(key_index == circle_index){
+        audio_triggerExp();
+        console.log("Points...");
+        points+=1;
+    }*/
 
-    if(key_index == circle_index){
+    if(target.style.display == "block"){
+        audio_triggerExp();
         console.log("Points...");
         points+=1;
     }
