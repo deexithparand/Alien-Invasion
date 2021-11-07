@@ -5,7 +5,7 @@ var key_index;
 var avoid_keypress = true;
 
 function getKeyIndex(temp){
-    //console.log("Pressed : "+temp);
+    //console.log("Pressed : "+temp); (testing purpose)
     key_index = temp;
 } 
 
@@ -16,7 +16,7 @@ function audio_trigger(){
 
 function audio_triggerExp(){
     var audio = new Audio('C:/Users/deexi/OneDrive/Desktop/WebDev/Sun/Audio/explosion.mp3');
-    audio.volume = 0.1;
+    audio.volume = 0.3;
     audio.play();
 }
 
@@ -261,7 +261,7 @@ function instant_circle_call(){
     function instant_circle(){
         //cnt+=1;
         var randomVal = Math.floor(Math.random() * 9);
-        console.log(randomVal); //print index
+        //console.log(randomVal); //print index (testing purpose)
         document.getElementById('gameCanvas').getElementsByTagName('i').item(randomVal).style.display = "block";
         setTimeout(function(){
             document.getElementById('gameCanvas').getElementsByTagName('i').item(randomVal).style.display = "none";
@@ -288,14 +288,14 @@ var points=0; //avoid declartion to 0 on call function everytime
 
 //increase points
 function count_points(){
-    console.log("Key Index : "+key_index);
+    //console.log("Key Index : "+key_index); (testing purpose)
     var target = document.getElementById('gameCanvas').getElementsByTagName('i').item(key_index);
 
     //everytime you press the button if there is circle displayed in the index passed
     //point count increases
     if(target.style.display == "block"){
         audio_triggerExp();
-        console.log("Points...");
+        //console.log("Points..."); (testing purpose)
         points+=1;
     }
     display_score(points);
@@ -305,6 +305,7 @@ function count_points(){
 }
 
 function display_endScreen(){
+    avoid_keypress = true;
     document.getElementsByClassName('endScreen')[0].style.visibility = "visible";
     document.getElementsByClassName('endScreen')[0].getElementsByTagName('i')[0].style.visibility = "visible";
 }
@@ -315,7 +316,7 @@ function replayMousedown(){
 
 //Now Creation of timer for Game
 function gameTimer(){
-    const startTime = 1;
+    const startTime = 0.5;
     var time = startTime * 60;
     var targetElement = document.getElementsByClassName('right_comp')[0].getElementsByTagName('div').item(0);
     
@@ -350,6 +351,10 @@ function display_score(score){
     var targetElement = document.getElementsByClassName('right_comp')[0].getElementsByTagName('div').item(1);
     targetElement.innerHTML = score;
 }
+
+
+
+
 
 
 
