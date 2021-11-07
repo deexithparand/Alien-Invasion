@@ -115,6 +115,54 @@
     color: red;
 }
 
+/*right component*/
+.right_comp{
+    display: inline-flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content:flex-start;
+}
+
+/*Score Block*/
+.score,.timer{
+    padding: 10px;
+    margin: 5px;
+
+    border: 3px solid rgb(255, 48, 48);
+
+    box-shadow: 0 0 20px 1px red,0 0 10px 1px red inset;
+
+    background-color: peachpuff;
+
+    height: 150px;
+    width: 150px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Red Hat Mono', monospace;
+    font-size: xx-large; 
+    font-weight: lighter;
+    color: black;
+}
+
+
+
+/*Score CSS Merge
+.score{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Red Hat Mono', monospace;
+    font-size: xx-large; 
+    font-weight: lighter;
+    color: black;
+}*/
+
+
+
 
 
 

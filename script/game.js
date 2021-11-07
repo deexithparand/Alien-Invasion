@@ -16,6 +16,7 @@ function audio_trigger(){
 
 function audio_triggerExp(){
     var audio = new Audio('C:/Users/deexi/OneDrive/Desktop/WebDev/Sun/Audio/explosion.mp3');
+    audio.volume = 0.1;
     audio.play();
 }
 
@@ -235,6 +236,7 @@ document.addEventListener('keydown',PressColor = (event) =>{
 
 //2. Function for Starting Screen
 function mousedown(){
+    gameTimer();
     var target = document.getElementsByClassName('startScreen')[0];
     target.style.display = "none";
 
@@ -242,34 +244,42 @@ function mousedown(){
     instant_circle_call();
     //avoid keypress before mousedown
     avoid_keypress = false;
+
+    //print zero in screen immediately after play button press
+    var targetElement = document.getElementsByClassName('right_comp')[0].getElementsByTagName('div').item(1);
+    targetElement.innerHTML = "0";
 }
 
 
 //3. Random Display of circle (Display for 2 secs)
+var stopPrint=0; //once timer stops, end_updateTime changes global variable to 1 
+
 function instant_circle_call(){
-    var cnt=0;
     
     var myVar  = setInterval(instant_circle, 800);
 
     function instant_circle(){
-        cnt+=1;
+        //cnt+=1;
         var randomVal = Math.floor(Math.random() * 9);
         console.log(randomVal); //print index
         document.getElementById('gameCanvas').getElementsByTagName('i').item(randomVal).style.display = "block";
         setTimeout(function(){
             document.getElementById('gameCanvas').getElementsByTagName('i').item(randomVal).style.display = "none";
         },500);
+        
         //temporarily till ##### 10 loops
-        if(cnt==10){
+        //STOP AT 10 LOOPS
+        if(stopPrint==1){
             myStopFunction();
         }
     }
 
+    //DISPLAY AFTER 10 LOOPS
     function myStopFunction(){
         clearInterval(myVar);
         //10 loops is just for demo
-        display_endScreen();
-        window.alert("Your Score : "+count_points());
+        //display_endScreen();
+        //window.alert("Your Score : "+count_points());
     }
 }
 
@@ -288,6 +298,7 @@ function count_points(){
         console.log("Points...");
         points+=1;
     }
+    display_score(points);
 
     //final value
     return points;
@@ -300,6 +311,44 @@ function display_endScreen(){
 
 function replayMousedown(){
     location.reload();
+}
+
+//Now Creation of timer for Game
+function gameTimer(){
+    const startTime = 1;
+    var time = startTime * 60;
+    var targetElement = document.getElementsByClassName('right_comp')[0].getElementsByTagName('div').item(0);
+    
+    //targetElement.innerHTML = "10:00";
+    var intVar = setInterval(updateTime,1000);
+    
+    function end_updateTime(){
+        clearInterval(intVar);
+    }
+
+    function updateTime(){
+        let minutes = Math.floor(time/60);
+        let seconds = time%60;
+
+        if(minutes==0 && seconds==0){
+            stopPrint=1;
+            end_updateTime();
+            display_endScreen();
+        }
+        else if(seconds<10){
+            targetElement.innerHTML = minutes+":0"+seconds;    
+        }
+        else{
+            targetElement.innerHTML = minutes+":"+seconds;
+        }
+
+        time--;
+    }
+}
+
+function display_score(score){
+    var targetElement = document.getElementsByClassName('right_comp')[0].getElementsByTagName('div').item(1);
+    targetElement.innerHTML = score;
 }
 
 
