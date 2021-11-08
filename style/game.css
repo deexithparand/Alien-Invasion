@@ -4,7 +4,8 @@
 }
 
 .main{
-    background-color: rgb(61, 11, 11);
+    /*background-color: rgb(61, 11, 11);*/
+    background-color: rgb(19,36,62);
     height:100vh;
 
     display: grid;
@@ -34,7 +35,7 @@
 
 .gameCanvas div{
     /*Content inside each div of gameCanvas is centered*/
-    color: rgb(51, 131, 51);
+    color: rgb(17, 43, 17);
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -119,8 +120,80 @@
 .right_comp{
     display: inline-flex;
     flex-direction: column;
-    align-items:flex-start;
-    justify-content:flex-start;
+    align-items: center;
+    justify-content: center;
+}
+
+.right_comp div{
+    border-radius: 5px;
+}
+
+.right_comp > div:nth-child(0){
+    margin-top: 40px;
+    /*margin-bottom: 20px;*/
+}
+
+.title{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-family: 'Press Start 2P', cursive;
+    font-size: large;
+    color: white;
+    
+    white-space: nowrap;
+}
+
+
+
+.title h1{
+    /*text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5) cyan, 0 0 0.45em cyan;*/
+    /*text-shadow: 0 0 30px white,0 2px 10px #FF0000;*/
+    text-shadow:0 0 7px aquamarine, 0 0 10px aquamarine,0 0 21px aquamarine,0 0 30px white;
+     
+    animation: flicker 7s linear infinite;
+}
+
+@keyframes flicker{
+    0%{
+        text-shadow:0 0 5px white,0 0 30px white;
+    }
+    10%{
+        text-shadow:0 0 5px white;
+    }
+    25%{
+        text-shadow:0 0 5px white,0 0 30px white;
+    }
+    30%{
+        text-shadow:0 0 5px white;
+    }
+    50%{
+        text-shadow:0 0 5px white,0 0 30px white;
+    }
+    60%{
+        text-shadow:0 0 5px white,0 0 30px white;
+    }
+    65%{
+        text-shadow:0 0 5px white;
+    }
+    70%{
+        text-shadow:0 0 5px white,0 0 30px white;
+    }
+    90%{
+        text-shadow:0 0 5px white;
+    }
+    100%{
+        text-shadow:0 0 5px white,0 0 30px white;
+    }
+}
+
+
+.right_comp > div:nth-child(1){
+    /*margin-top: 20px;*/
+    margin-bottom: 40px;
 }
 
 /*Score Block*/

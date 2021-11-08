@@ -259,6 +259,12 @@ function instant_circle_call(){
     var myVar  = setInterval(instant_circle, 800);
 
     function instant_circle(){
+        //temporarily till ##### 10 loops
+        //STOP AT 10 LOOPS
+        if(stopPrint==1){
+            myStopFunction();
+        }
+
         //cnt+=1;
         var randomVal = Math.floor(Math.random() * 9);
         //console.log(randomVal); //print index (testing purpose)
@@ -266,12 +272,6 @@ function instant_circle_call(){
         setTimeout(function(){
             document.getElementById('gameCanvas').getElementsByTagName('i').item(randomVal).style.display = "none";
         },500);
-        
-        //temporarily till ##### 10 loops
-        //STOP AT 10 LOOPS
-        if(stopPrint==1){
-            myStopFunction();
-        }
     }
 
     //DISPLAY AFTER 10 LOOPS
@@ -331,10 +331,10 @@ function gameTimer(){
         let minutes = Math.floor(time/60);
         let seconds = time%60;
 
-        if(minutes==0 && seconds==0){
+        if(minutes<0){
             stopPrint=1;
-            end_updateTime();
             display_endScreen();
+            end_updateTime();
         }
         else if(seconds<10){
             targetElement.innerHTML = minutes+":0"+seconds;    
