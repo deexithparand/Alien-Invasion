@@ -13,6 +13,27 @@
     grid-template-columns: repeat(3,1fr);
 }
 
+.main > div:nth-child(1){
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.main > div:nth-child(1) a{
+    text-decoration: none;   
+}
+
+.main > div:nth-child(1) i{
+    color: ivory; 
+    opacity: 0.5; 
+    padding-left: 50px;
+    transform:all 0.2s ease;
+}
+
+.main > div:nth-child(1) i:hover{
+    opacity: 0.8; 
+}
+
 .gameCanvas{
     position: absolute;
     height: 400px;
@@ -98,6 +119,7 @@
     z-index: 1;
 
     display: inline-flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -107,11 +129,26 @@
 /*replay button*/
 #replay{
     visibility: hidden;
+    margin: 30px; /*space between the 2 buttons*/
     color: rosybrown;
     transition: all 0.3s ease;
 }
 
 #replay:hover{
+    cursor: pointer;
+    color: red;
+}
+
+/*home button*/
+#home_btn{
+    visibility: hidden;
+    margin: 30px; /*space between the 2 buttons*/
+    text-decoration: none;
+    color: rosybrown;
+    transition: all 0.3s ease;
+}
+
+#home_btn:hover{
     cursor: pointer;
     color: red;
 }
@@ -159,34 +196,43 @@
 
 @keyframes flicker{
     0%{
-        text-shadow:0 0 5px white,0 0 30px white;
+        text-shadow:0 0 10px white,0 0 50px white;
+    }
+    5%{
+        text-shadow:0 0 10px white,0 0 50px white;
     }
     10%{
-        text-shadow:0 0 5px white;
+        text-shadow:0 0 10px white;
+    }
+    15%{
+        text-shadow:0 0 10px white,0 0 50px white;
+    }
+    20%{
+        text-shadow:0 0 10px white;
     }
     25%{
-        text-shadow:0 0 5px white,0 0 30px white;
+        text-shadow:0 0 10px white,0 0 50px white;
     }
     30%{
-        text-shadow:0 0 5px white;
+        text-shadow:0 0 10px white;
     }
     50%{
-        text-shadow:0 0 5px white,0 0 30px white;
+        text-shadow:0 0 10px white,0 0 50px white;
     }
     60%{
-        text-shadow:0 0 5px white,0 0 30px white;
+        text-shadow:0 0 10px white,0 0 50px white;
     }
     65%{
-        text-shadow:0 0 5px white;
+        text-shadow:0 0 10px white;
     }
     70%{
-        text-shadow:0 0 5px white,0 0 30px white;
+        text-shadow:0 0 10px white,0 0 50px white;
     }
     90%{
-        text-shadow:0 0 5px white;
+        text-shadow:0 0 10px white;
     }
     100%{
-        text-shadow:0 0 5px white,0 0 30px white;
+        text-shadow:0 0 10px white,0 0 50px white;
     }
 }
 

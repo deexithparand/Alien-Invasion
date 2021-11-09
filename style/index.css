@@ -24,7 +24,7 @@ div.sun{
     box-shadow:0px 0px 30px 12px yellow;
 
     display:grid;
-    grid-template-rows: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
 
     gap:0px; 
 }
@@ -50,7 +50,7 @@ div.sun > div:nth-child(1):hover a i{
     background-color: rgb(255, 50, 50);
     border-radius: 25%;
     padding: 10px;
-    transform: scale(1.5);
+    transform: scale(1.5) rotate(15deg);
     opacity: 1;
     cursor: pointer;
 }
@@ -63,23 +63,9 @@ div.sun > div:nth-child(2) a i{
 
 div.sun > div:nth-child(2):hover a i{
     background-color: rgb(255, 50, 50);
-    border-radius: 50%;
-    padding: 13px;
-    transform: scale(1.5);
-    opacity: 1;
-    cursor: pointer;
-}
-
-div.sun > div:nth-child(3) a i{
-    opacity: 1;
-    transition: all 0.3s ease;
-}
-
-div.sun > div:nth-child(3):hover a i{
-    background-color: rgb(255, 50, 50);
     border-radius: 25%;
-    padding: 11px;
-    transform: scale(1.5);
+    padding: 13px;
+    transform: scale(1.5) rotate(15deg);
     opacity: 1;
     cursor: pointer;
 }
@@ -138,39 +124,3 @@ div.asteroid > img:nth-child(5){
 }
 
 /*Asteroid Rotate Animation*/
-
-/*Stars animation*/
-.star{
-    display: block;
-    margin: 20px;
-    position: absolute;
-    z-index: -1;
-    height: 4px;
-    width: 4px;
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: 0px 0px 8px 2px white;
-    
-    animation: torch 3s linear infinite;
-}
-
-@keyframes torch{
-    0%{
-        box-shadow: 0px 0px 4px 2px white;
-    }
-    30%{
-        box-shadow: 0px 0px 4px 2px white;
-        opacity: 0;
-    }
-    50%{
-        box-shadow: 0px 0px 4px 2px white;
-    }
-    70%{
-        box-shadow: 0px 0px 4px 2px white;
-        opacity: 0;
-    }
-    100%{
-        box-shadow: 0px 0px 4px 2px white;
-    }
-}
-

@@ -16,7 +16,7 @@ function audio_trigger(){
 
 function audio_triggerExp(){
     var audio = new Audio('C:/Users/deexi/OneDrive/Desktop/WebDev/Sun/Audio/explosion.mp3');
-    audio.volume = 0.3;
+    audio.volume = 0.2; //reduced volume to avoid pain while wearing headphones
     audio.play();
 }
 
@@ -308,6 +308,7 @@ function display_endScreen(){
     avoid_keypress = true;
     document.getElementsByClassName('endScreen')[0].style.visibility = "visible";
     document.getElementsByClassName('endScreen')[0].getElementsByTagName('i')[0].style.visibility = "visible";
+    document.getElementsByClassName('endScreen')[0].getElementsByTagName('i')[1].style.visibility = "visible";
 }
 
 function replayMousedown(){
@@ -333,7 +334,7 @@ function gameTimer(){
 
         if(minutes<0){
             stopPrint=1;
-            display_endScreen();
+            setTimeout(function(){ display_endScreen(); }, 3000);
             end_updateTime();
         }
         else if(seconds<10){
