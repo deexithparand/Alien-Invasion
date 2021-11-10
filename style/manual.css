@@ -194,21 +194,21 @@
 
 @keyframes torch{
     0%{
-        box-shadow: 0px 0px 50px 2px white;
+        box-shadow: 0px 0px 45px 4px white;
     }
     30%{
-        box-shadow: 0px 0px 50px 2px white;
+        box-shadow: 0px 0px 45px 4px white;
         opacity: 0;
     }
     50%{
-        box-shadow: 0px 0px 50px 2px white;
+        box-shadow: 0px 0px 45px 4px white;
     }
     70%{
-        box-shadow: 0px 0px 50px 2px white;
+        box-shadow: 0px 0px 45px 4px white;
         opacity: 0;
     }
     100%{
-        box-shadow: 0px 0px 50px 2px white;
+        box-shadow: 0px 0px 45px 4px white;
     }
 }
 
