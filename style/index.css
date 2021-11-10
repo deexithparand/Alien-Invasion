@@ -108,16 +108,16 @@ div.asteroid > img{
 }
 
 div.asteroid > img:nth-child(1){
-    animation-delay: 8s;
+    animation-delay: 7s;
 }
 div.asteroid > img:nth-child(2){
-    animation-delay: 5s;
+    animation-delay: 4s;
 }
 div.asteroid > img:nth-child(3){
     animation-delay: 3s;
 }
 div.asteroid > img:nth-child(4){
-    animation-delay: 7s;
+    animation-delay: 6s;
 }
 div.asteroid > img:nth-child(5){
     animation-delay: 2s;
