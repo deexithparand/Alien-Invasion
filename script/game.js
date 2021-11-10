@@ -10,12 +10,14 @@ function getKeyIndex(temp){
 } 
 
 function audio_trigger(){
-    var audio = new Audio('C:/Users/deexi/OneDrive/Desktop/WebDev/Sun/Audio/laser.mp3');
+    var audio = new Audio('../Audio/laser.mp3');
+    //var audio = new Audio('https://drive.google.com/file/d/1c8PZ0djmWNpq40gzwjlFAAn44onl4yJP/view?usp=sharing');
     audio.play();
 }
 
 function audio_triggerExp(){
-    var audio = new Audio('C:/Users/deexi/OneDrive/Desktop/WebDev/Sun/Audio/explosion.mp3');
+    var audio = new Audio('../Audio/explosion.mp3');
+    //var audio = new Audio('https://drive.google.com/file/d/11Uih4BdxgE8M-YT4o1CDkVkZ-Sod0CKr/view?usp=sharing');
     audio.volume = 0.2; //reduced volume to avoid pain while wearing headphones
     audio.play();
 }
