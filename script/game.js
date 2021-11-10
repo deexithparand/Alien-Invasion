@@ -18,9 +18,11 @@ function audio_trigger(){
 function audio_triggerExp(){
     var audio = new Audio('../Audio/explosion.mp3');
     //var audio = new Audio('https://drive.google.com/file/d/11Uih4BdxgE8M-YT4o1CDkVkZ-Sod0CKr/view?usp=sharing');
-    audio.volume = 0.2; //reduced volume to avoid pain while wearing headphones
+    audio.volume = 0.4; //reduced volume to avoid pain while wearing headphones
     audio.play();
 }
+
+var firstEntry = false;
 
 //#####
 
@@ -33,6 +35,11 @@ document.addEventListener('keydown',PressColor = (event) =>{
     const keyList = ['7','8','9','4','5','6','1','2','3','Home','ArrowUp','PageUp','ArrowLeft','Clear','ArrowRight','End','ArrowDown','PageDown'];
     var divSelect = document.getElementsByClassName("gameCanvas")[0].getElementsByTagName('div');
     if(keyList.includes(keyName)==true && avoid_keypress==false){
+        /*First Button Delay Sound*/
+        if(firstEntry==false){
+            audio_trigger();
+            firstEntry = true;
+        }
        switch(keyName){
             case '7':
                 audio_trigger();
